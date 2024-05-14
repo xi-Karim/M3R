@@ -1,0 +1,6 @@
+node_modules
+dist
+package-lock.*
+bun.lockb
+yarn.*
+pnpm-lock.*

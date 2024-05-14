@@ -1,0 +1,41 @@
+{
+  "name": "m3r",
+  "version": "0.1",
+  "description": "Material You Components for React.",
+  "scripts": {
+    "rollup": "rollup -c --bundleConfigAsCjs"
+  },
+  "author": "nanoVoltz",
+  "license": "Apache 2.0",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/react": "^18.3.1",
+    "react": "^18.3.1",
+    "rollup": "^4.17.2",
+    "rollup-plugin-dts": "^6.1.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@material/material-color-utilities": "^0.2.7",
+    "@mui/icons-material": "^5.15.17",
+    "@mui/material": "^5.15.16",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.18",
+    "react-dom": "^18.3.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "tslib": "^2.6.2"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts"
+}
