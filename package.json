@@ -1,6 +1,6 @@
 {
   "name": "m3r",
-  "version": "0.1",
+  "version": "0.0.1",
   "description": "Material You Components for React.",
   "scripts": {
     "rollup": "rollup -c --bundleConfigAsCjs"
