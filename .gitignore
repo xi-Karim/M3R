@@ -4,3 +4,4 @@ package-lock.*
 bun.lockb
 yarn.*
 pnpm-lock.*
+*.tgz

@@ -2,8 +2,13 @@
   "name": "m3r",
   "version": "0.0.1",
   "description": "Material You Components for React.",
+  "files": [
+  	"dist/",
+  	"package.json",
+  	"LICENSE"
+  ],
   "scripts": {
-    "rollup": "rollup -c --bundleConfigAsCjs"
+    "rollup": "rollup -c --bundleConfigAsCjs && npm pack && node packer.js"
   },
   "author": "nanoVoltz",
   "license": "Apache 2.0",
