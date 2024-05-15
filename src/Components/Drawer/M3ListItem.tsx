@@ -3,14 +3,13 @@ import { ListItem } from "@mui/material";
 
 interface M3ListItemProps {
   children?: React.ReactNode;
-  selected?: boolean;
   onClick?: React.MouseEventHandler<HTMLLIElement>;
   sx?: object;
 }
 
-const M3ListItem = ({ children, selected, onClick, sx }: M3ListItemProps) => {
+const M3ListItem = ({ children, onClick, sx }: M3ListItemProps) => {
   return (
-    <ListItem button selected={selected} onClick={onClick} sx={sx}>
+    <ListItem onClick={onClick} sx={sx}>
       {children}
     </ListItem>
   );

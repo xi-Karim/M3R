@@ -8,7 +8,11 @@ interface M3CardActionProps {
 }
 
 const M3CardAction = ({ children, onClick, sx }: M3CardActionProps) => {
-  return <CardActionArea sx={sx}>{children}</CardActionArea>;
+  return (
+    <CardActionArea sx={sx} onClick={onClick}>
+      {children}
+    </CardActionArea>
+  );
 };
 
 export default M3CardAction;

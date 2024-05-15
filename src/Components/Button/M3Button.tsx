@@ -6,8 +6,9 @@ interface M3ButtonProps {
   variant?: "text" | "outlined" | "elevated" | "filled" | "tonal";
   disabled?: boolean;
   size?: "small" | "medium" | "large";
-  onClick?: MouseEventHandler<HTMLAnchorElement>;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
   sx?: object;
+  href?: string;
 }
 
 const M3Button = ({
@@ -17,6 +18,7 @@ const M3Button = ({
   size,
   onClick,
   sx,
+  href,
 }: M3ButtonProps) => {
   return (
     <>
@@ -25,6 +27,7 @@ const M3Button = ({
         disabled={disabled}
         size={size}
         onClick={onClick}
+        href={href}
         sx={sx}
       >
         {children}

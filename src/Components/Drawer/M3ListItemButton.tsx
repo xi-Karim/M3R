@@ -4,8 +4,9 @@ import { ListItemButton } from "@mui/material";
 interface M3ListItemButtonProps {
   children?: React.ReactNode;
   selected?: boolean;
-  onClick?: React.MouseEventHandler<HTMLLIElement>;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
   sx?: object;
+  href: string;
 }
 
 const M3ListItemButton = ({
@@ -13,9 +14,10 @@ const M3ListItemButton = ({
   selected,
   onClick,
   sx,
+  href,
 }: M3ListItemButtonProps) => {
   return (
-    <ListItemButton selected={selected} onClick={onClick} sx={sx}>
+    <ListItemButton href={href} selected={selected} onClick={onClick} sx={sx}>
       {children}
     </ListItemButton>
   );

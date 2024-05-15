@@ -4,9 +4,12 @@ import Checkbox from "@mui/material/Checkbox";
 
 interface M3FromControlLabelProps {
   label: string;
-  control?: React.ReactNode;
+  control?: React.ReactElement;
   checked?: boolean;
-  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  onChange?: (
+    event: React.SyntheticEvent<Element, Event>,
+    checked: boolean
+  ) => void;
   sx?: object;
   disabled?: boolean;
 }

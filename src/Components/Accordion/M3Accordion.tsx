@@ -2,7 +2,7 @@ import { Accordion } from "@mui/material";
 import React from "react";
 
 interface M3AccordionProps {
-  children?: NonNullable<React.ReactNode>;
+  children: NonNullable<React.ReactNode>;
   disabled?: boolean;
   onChange?: (
     event: React.SyntheticEvent<Element, Event>,

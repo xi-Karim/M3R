@@ -1,5 +1,5 @@
 import { Alert } from "@mui/material";
-import React, { EventHandler, SyntheticEvent } from "react";
+import React from "react";
 
 interface M3AlertProps {
   children?: React.ReactNode;

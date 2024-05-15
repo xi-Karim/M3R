@@ -1,16 +1,9 @@
-import { Fab } from "@mui/material";
+import { Fab, PropTypes } from "@mui/material";
 import React from "react";
 
 interface M3FABProps {
   children?: React.ReactNode;
-  color?:
-    | "error"
-    | "info"
-    | "inherit"
-    | "primary"
-    | "secondary"
-    | "success"
-    | "warning";
+  color?: "primary" | "secondary" | "tertiary" | "surface";
   variant?: "circular" | "extended";
   sx?: object;
 }
