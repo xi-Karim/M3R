@@ -2,11 +2,13 @@ import React, { useEffect } from "react";
 import { useContext, useMemo } from "react";
 import { CssBaseline, createTheme, ThemeProvider } from "@mui/material";
 import { deepmerge } from "@mui/utils";
+
 import {
   ThemeModeContext,
   ThemeSchemeContext,
   getMUIComponents,
   getMUIPalette,
+  getTypography,
 } from "../..";
 
 interface M3Props {
@@ -27,7 +29,9 @@ const M3Theme = ({ children, themeColor, enteredThemeMode }: M3Props) => {
   const m3Theme = useMemo(() => {
     const muiPalette = getMUIPalette(themeMode, themeScheme);
 
-    let theme = createTheme(muiPalette);
+    const muiTypography = getTypography();
+
+    let theme = createTheme({ ...muiPalette, ...muiTypography });
     theme = deepmerge(theme, getMUIComponents(theme));
 
     return theme;
