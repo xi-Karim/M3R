@@ -7,6 +7,7 @@ export * from './Button';
 export * from './Card';
 export * from './Drawer';
 export * from './Fab';
+export * from './List'
 export * from './ListItem';
 export * from './ListItemButton';
 export * from './ListItemIcon';
@@ -15,3 +16,4 @@ export * from './Switch';
 export * from './ToggleButton';
 export * from './ToggleButtonGroup';
 export * from './Tooltip';
+export * from './Divider';

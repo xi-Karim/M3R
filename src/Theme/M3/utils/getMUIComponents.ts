@@ -7,6 +7,7 @@ import {
     getButton,
     getCard,
     getCssBaseline,
+    getDivider,
     getDrawer,
     getFab,
     getListItem,
@@ -18,6 +19,7 @@ import {
     getToggleButtonGroup,
     getTooltip
 } from '../components';
+import { getList } from '../components/List';
 
 
 type M3Components = { components: Theme['components'] };
@@ -35,6 +37,7 @@ export const getMUIComponents = (theme: Theme) => {
             ...getCard(theme),
             ...getDrawer(theme),
             ...getFab(theme),
+            ...getList(theme),
             ...getListItem(theme),
             ...getListItemButton(theme),
             ...getListItemIcon(theme),
@@ -43,6 +46,7 @@ export const getMUIComponents = (theme: Theme) => {
             ...getToggleButton(theme),
             ...getToggleButtonGroup(theme),
             ...getTooltip(theme),
+            ...getDivider(theme),
         }
     } as M3Components;
 };

@@ -8,16 +8,16 @@ interface M3ListItemIcon {
     }
 };
 
-export const getListItemIcon = (_theme: Theme): M3ListItemIcon => {
-    //const { palette } = theme;
+export const getListItemIcon = (theme: Theme): M3ListItemIcon => {
+    const { palette } = theme;
     return {
         MuiListItemIcon: {
             styleOverrides: {
                 root: {
                     color: 'inherit',
-                    minWidth: 32,
+                    minWidth: '24px',
                     '&.Mui-selected': {
-                        fontWeight: 'bold'
+                        color: palette.primary.main
                     },
                 },
             }

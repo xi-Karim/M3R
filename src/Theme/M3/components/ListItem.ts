@@ -1,4 +1,5 @@
-import { Theme, ComponentsProps, ComponentsOverrides, ComponentsVariants } from "@mui/material";
+import { Theme, ComponentsProps, ComponentsOverrides, ComponentsVariants, alpha } from "@mui/material";
+import { getStateLayerColor, StateLayer } from "../utils/getStayeLayerColor";
 
 interface M3ListItem {
     MuiListItem: {
@@ -8,18 +9,92 @@ interface M3ListItem {
     }
 };
 
-export const getListItem = (_theme: Theme): M3ListItem => {
-    //const { palette } = theme;
+export const getListItem = (theme: Theme): M3ListItem => {
+    const { palette } = theme;
     return {
         MuiListItem: {
             styleOverrides: {
                 root: {
-                    paddingTop: 1,
-                    paddingBottom: 1,
-                    '& .MuiListItemButton-root': {
-                        paddingTop: 8,
-                        paddingBottom: 8
-                    }
+                    background: palette.surface.main,
+                    color: palette.onSurface.main,
+
+                    fontSize: theme.typography.bodyLarge.fontSize,
+                    lineHeight: theme.typography.bodyLarge.lineHeight,
+                    letterSpacing: theme.typography.bodyLarge.letterSpacing,
+
+                    boxShadow: theme.shadows[0],
+
+                    paddingTop: 8,
+                    paddingBottom: 8,
+                    paddingX: 0,
+
+                    overflow: 'hidden',
+                    //STATE
+                    '&:hover': {
+                        color: palette.onSurface.main,
+                        background: getStateLayerColor(StateLayer.Hover, palette.onSurface.main, palette.onSurface.main),
+                        '& .MuiListItemIcon-root': {
+                            color: palette.onSurfaceVariant.main,
+                        },
+                    },
+
+                    '&:focus': {
+                        color: palette.onSurface.main,
+                        backgroundColor: getStateLayerColor(StateLayer.Focus, palette.onSurface.main, palette.onSurface.main),
+                        '& .MuiListItemIcon-root': {
+                            color: palette.onSurfaceVariant.main,
+                        },
+                    },
+
+                    '&.Mui-disabled': {
+                        color: alpha(palette.onSurface.main, 0.38),
+                    },
+
+                    //drag state
+
+                    //ELEMENTS
+                    '& .MuiListItemText-root': {
+                        marginInlineStart: '16px',
+                    },
+
+                    '& .MuiListItemIcon-root': {
+                        marginInlineStart: '16px',
+                        minWidth: '24px',
+                        color: palette.onSurfaceVariant.main,
+                    },
+
+                    '& .MuiAvatar-root': {
+                        marginInlineStart: '16px',
+                        background: palette.primaryContainer.main,
+                        color: palette.onPrimaryContainer.main,
+                    },
+
+                    '& .MuiDivider-root': {
+                        color: palette.outline.main,
+                        height: 1,
+                        marginX: 16,
+                    },
+
+                    '& .MuiSupportingText-root': {
+                        color: palette.onSurfaceVariant.main,
+                        text: theme.typography.displayLarge
+                    },
+
+                    '&[line-count="3"]': {
+                        alignItems: 'flex-start',
+                        height: '88px',
+                        maxHeight: '88px',
+                        paddingY: '12px',
+                    },
+
+                    '&[line-count="2"]': {
+                        maxHeight: '72px',
+                    },
+
+                    '&[line-count="1"]': {
+                        maxHeight: '56px',
+                    },
+
                 }
             }
         }
