@@ -1,18 +1,14 @@
-import { Switch } from "@mui/material";
 import React from "react";
+import { Switch, SwitchProps } from "@mui/material";
 
-interface M3SwitchProps {
-  checked?: boolean;
-  name?: string;
-  onChange?: (
-    event: React.ChangeEvent<HTMLInputElement>,
-    checked: boolean
-  ) => void;
-  sx?: object;
-}
+// Define additional props and modified props for M3Switch
+interface M3SwitchModifiedProps {}
 
-const M3Switch = ({ checked, name, onChange, sx }: M3SwitchProps) => {
-  return <Switch checked={checked} name={name} onChange={onChange} sx={sx} />;
+// Merge the new/ props with SwitchProps
+export type M3SwitchProps = M3SwitchModifiedProps & SwitchProps;
+
+const M3Switch = (props: M3SwitchProps) => {
+  return <Switch {...props} />;
 };
 
 export default M3Switch;

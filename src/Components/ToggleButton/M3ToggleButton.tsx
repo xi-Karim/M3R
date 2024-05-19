@@ -1,37 +1,16 @@
-import { ToggleButton } from "@mui/material";
 import React from "react";
+import { ToggleButton, ToggleButtonProps } from "@mui/material";
 
-interface M3ToogleButtonProps {
-  children?: React.ReactNode;
-  value?: any;
-  selected?: boolean;
-  color?: "primary" | "secondary" | "error" | "info" | "success" | "warning";
-  onChange?: (
-    event: React.MouseEvent<HTMLElement, MouseEvent>,
-    value: any
-  ) => void;
-  sx?: object;
-}
+// Define additional props and modified props for M3ToggleButton
+interface M3ToggleButtonModifiedProps {}
 
-const M3ToggleButton = ({
-  children,
-  value,
-  selected,
-  color,
-  onChange,
-  sx,
-}: M3ToogleButtonProps) => {
-  return (
-    <ToggleButton
-      value={value}
-      selected={selected}
-      color={color}
-      onChange={onChange}
-      sx={sx}
-    >
-      {children}
-    </ToggleButton>
-  );
+// Merge the new/ props with ToggleButtonProps
+export type M3ToggleButtonProps = M3ToggleButtonModifiedProps &
+  ToggleButtonProps;
+
+const M3ToggleButton = (props: M3ToggleButtonProps) => {
+  const { children } = props;
+  return <ToggleButton {...props}>{children}</ToggleButton>;
 };
 
 export default M3ToggleButton;

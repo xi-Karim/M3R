@@ -1,46 +1,15 @@
-import React, { useState } from "react";
-import { Drawer, IconButton, Toolbar, Typography } from "@mui/material";
-import { Close } from "@mui/icons-material";
+import React from "react";
+import { Drawer, DrawerProps } from "@mui/material";
 
-interface M3DrawerProps {
-  anchor: "left" | "top" | "bottom" | "right";
-  open?: boolean;
-  onClose: () => void;
-  children: React.ReactNode;
-  title?: string;
-  sx?: object;
-}
+// Define additional props and modified props for M3Drawer
+interface M3DrawerModifiedProps {}
 
-const M3Drawer = ({
-  anchor,
-  open = false,
-  onClose,
-  children,
-  title,
-  sx,
-}: M3DrawerProps) => {
-  const [isOpen, setIsOpen] = useState(open);
+// Merge the new/ props with DrawerProps
+export type M3DrawerProps = M3DrawerModifiedProps & DrawerProps;
 
-  const handleClose = () => {
-    setIsOpen(false);
-    onClose();
-  };
-
-  return (
-    <Drawer anchor={anchor} open={isOpen} onClose={handleClose} sx={sx}>
-      {title && (
-        <Toolbar>
-          <IconButton onClick={handleClose}>
-            <Close />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
-            {title}
-          </Typography>
-        </Toolbar>
-      )}
-      {children}
-    </Drawer>
-  );
+const M3Drawer = (props: M3DrawerProps) => {
+  const { children } = props;
+  return <Drawer {...props}>{children}</Drawer>;
 };
 
 export default M3Drawer;

@@ -1,13 +1,14 @@
 import React from "react";
-import { CardMedia } from "@mui/material";
+import { CardMedia, CardMediaProps } from "@mui/material";
 
-interface M3CardMediaProps {
-  image?: string;
-  sx?: object;
-}
+// Define additional props and modified props for M3CardMedia
+interface M3CardMediaModifiedProps {}
 
-const M3CardMedia = ({ image, sx }: M3CardMediaProps) => {
-  return <CardMedia image={image} sx={sx} />;
+// Merge the new/ props with CardMediaProps
+export type M3CardMediaProps = M3CardMediaModifiedProps & CardMediaProps;
+
+const M3CardMedia = (props: M3CardMediaProps) => {
+  return <CardMedia {...props} />;
 };
 
 export default M3CardMedia;

@@ -1,13 +1,16 @@
-import { AccordionActions } from "@mui/material";
 import React from "react";
+import { AccordionActions, AccordionActionsProps } from "@mui/material";
 
-interface M3AccordionActionsProps {
-  children?: NonNullable<React.ReactNode>;
-  sx?: object;
-}
+// Define additional props and modified props for M3AccordionActions
+interface M3AccordionActionsModifiedProps {}
 
-const M3AccordionActions = ({ children, sx }: M3AccordionActionsProps) => {
-  return <AccordionActions sx={sx}>{children}</AccordionActions>;
+// Merge the new/ props with AccordionActionsProps
+export type M3AccordionActionsProps = M3AccordionActionsModifiedProps &
+  AccordionActionsProps;
+
+const M3AccordionActions = (props: M3AccordionActionsProps) => {
+  const { children } = props;
+  return <AccordionActions {...props}>{children}</AccordionActions>;
 };
 
 export default M3AccordionActions;

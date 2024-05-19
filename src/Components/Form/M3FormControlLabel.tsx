@@ -1,37 +1,15 @@
 import React from "react";
-import { FormControlLabel } from "@mui/material";
-import Checkbox from "@mui/material/Checkbox";
+import { FormControlLabel, FormControlLabelProps } from "@mui/material";
 
-interface M3FromControlLabelProps {
-  label: string;
-  control?: React.ReactElement;
-  checked?: boolean;
-  onChange?: (
-    event: React.SyntheticEvent<Element, Event>,
-    checked: boolean
-  ) => void;
-  sx?: object;
-  disabled?: boolean;
-}
+// Define additional props and modified props for M3FormControlLabel
+interface M3FormControlLabelModifiedProps {}
 
-const M3FormControlLabel = ({
-  label,
-  control = <Checkbox />,
-  checked,
-  onChange,
-  sx,
-  disabled,
-}: M3FromControlLabelProps) => {
-  return (
-    <FormControlLabel
-      label={label}
-      control={control}
-      checked={checked}
-      onChange={onChange}
-      sx={sx}
-      disabled={disabled}
-    />
-  );
+// Merge the new/ props with FormControlLabelProps
+export type M3FormControlLabelProps = M3FormControlLabelModifiedProps &
+  FormControlLabelProps;
+
+const M3FormControlLabel = (props: M3FormControlLabelProps) => {
+  return <FormControlLabel {...props} />;
 };
 
 export default M3FormControlLabel;

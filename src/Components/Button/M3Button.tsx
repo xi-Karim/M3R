@@ -1,38 +1,15 @@
-import React, { MouseEventHandler } from "react";
-import { Button } from "@mui/material";
+import React from "react";
+import { Button, ButtonProps } from "@mui/material";
 
-interface M3ButtonProps {
-  children?: React.ReactNode;
-  variant?: "text" | "outlined" | "elevated" | "filled" | "tonal";
-  disabled?: boolean;
-  size?: "small" | "medium" | "large";
-  onClick?: MouseEventHandler<HTMLButtonElement>;
-  sx?: object;
-  href?: string;
-}
+// Define additional props and modified props for M3Button
+interface M3ButtonModifiedProps {}
 
-const M3Button = ({
-  children,
-  variant = "text",
-  disabled,
-  size,
-  onClick,
-  sx,
-  href,
-}: M3ButtonProps) => {
-  return (
-    <>
-      <Button
-        variant={variant}
-        disabled={disabled}
-        size={size}
-        onClick={onClick}
-        href={href}
-        sx={sx}
-      >
-        {children}
-      </Button>
-    </>
-  );
+// Merge the new/ props with ButtonProps
+export type M3ButtonProps = M3ButtonModifiedProps & ButtonProps;
+
+const M3Button = (props: M3ButtonProps) => {
+  const { children } = props;
+  return <Button {...props}>{children}</Button>;
 };
+
 export default M3Button;

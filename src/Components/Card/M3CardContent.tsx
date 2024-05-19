@@ -1,13 +1,15 @@
 import React from "react";
-import { CardContent } from "@mui/material";
+import { CardContent, CardContentProps } from "@mui/material";
 
-interface M3CardContentProps {
-  children?: React.ReactNode;
-  sx?: object;
-}
+// Define additional props and modified props for M3CardContent
+interface M3CardContentModifiedProps {}
 
-const M3CardContent = ({ children, sx }: M3CardContentProps) => {
-  return <CardContent sx={sx}>{children}</CardContent>;
+// Merge the new/ props with CardContentProps
+export type M3CardContentProps = M3CardContentModifiedProps & CardContentProps;
+
+const M3CardContent = (props: M3CardContentProps) => {
+  const { children } = props;
+  return <CardContent {...props}>{children}</CardContent>;
 };
 
 export default M3CardContent;

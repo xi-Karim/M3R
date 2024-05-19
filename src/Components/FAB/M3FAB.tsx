@@ -1,19 +1,15 @@
-import { Fab, PropTypes } from "@mui/material";
 import React from "react";
+import { Fab, FabProps } from "@mui/material";
 
-interface M3FABProps {
-  children?: React.ReactNode;
-  color?: "primary" | "secondary" | "tertiary" | "surface";
-  variant?: "circular" | "extended";
-  sx?: object;
-}
+// Define additional props and modified props for M3Fab
+interface M3FabModifiedProps {}
 
-const M3FAB = ({ children, color, variant, sx }: M3FABProps) => {
-  return (
-    <Fab color={color} variant={variant} sx={sx}>
-      {children}
-    </Fab>
-  );
+// Merge the new/ props with FabProps
+export type M3FabProps = M3FabModifiedProps & FabProps;
+
+const M3Fab = (props: M3FabProps) => {
+  const { children } = props;
+  return <Fab {...props}>{children}</Fab>;
 };
 
-export default M3FAB;
+export default M3Fab;

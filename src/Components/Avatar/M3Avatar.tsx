@@ -1,20 +1,15 @@
-import { Avatar } from "@mui/material";
 import React from "react";
+import { Avatar, AvatarProps } from "@mui/material";
 
-interface M3AvatarProps {
-  src?: string;
-  children?: React.ReactNode;
-  alt?: string;
-  variant?: "circular" | "rounded";
-  sx?: object;
-}
+// Define additional props and modified props for M3Avatar
+interface M3AvatarModifiedProps {}
 
-const M3Avatar = ({ children, alt, src, sx, variant }: M3AvatarProps) => {
-  return (
-    <Avatar src={src} alt={alt} sx={sx} variant={variant}>
-      {children}
-    </Avatar>
-  );
+// Merge the new/ props with AvatarProps
+export type M3AvatarProps = M3AvatarModifiedProps & AvatarProps;
+
+const M3Avatar = (props: M3AvatarProps) => {
+  const { children } = props;
+  return <Avatar {...props}>{children}</Avatar>;
 };
 
 export default M3Avatar;

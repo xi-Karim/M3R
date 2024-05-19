@@ -1,19 +1,15 @@
-import { Alert } from "@mui/material";
 import React from "react";
+import { Alert, AlertProps } from "@mui/material";
 
-interface M3AlertProps {
-  children?: React.ReactNode;
-  severity?: "error" | "warning" | "info" | "success";
-  onClose?: (event: React.SyntheticEvent<Element, Event>) => void;
-  sx?: object;
-}
+// Define additional props and modified props for M3Alert
+interface M3AlertModifiedProps {}
 
-const M3Alert = ({ children, severity, onClose, sx }: M3AlertProps) => {
-  return (
-    <Alert severity={severity} onClose={onClose} sx={sx}>
-      {children}
-    </Alert>
-  );
+// Merge the new/ props with AlertProps
+export type M3AlertProps = M3AlertModifiedProps & AlertProps;
+
+const M3Alert = (props: M3AlertProps) => {
+  const { children } = props;
+  return <Alert {...props}>{children}</Alert>;
 };
 
 export default M3Alert;
