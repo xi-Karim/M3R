@@ -8,6 +8,10 @@ import packageJson from "./package.json";
 
 export default [
   {
+	onwarn(warning, warn) {
+	  if (warning.code === 'MODULE_LEVEL_DIRECTIVE') return
+      warn(warning)
+	},
     input: "src/index.ts",
     output: [
       {
