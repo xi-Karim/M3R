@@ -1,6 +1,6 @@
 {
   "name": "m3r",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Material You Components for React.",
   "files": [
   	"dist/",
