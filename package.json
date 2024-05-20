@@ -1,9 +1,11 @@
 {
   "name": "m3r",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Material You Components for React.",
   "files": [
-    "dist"
+  	"dist/",
+  	"package.json",
+  	"LICENSE"
   ],
   "scripts": {
     "rollup": "rollup -c --bundleConfigAsCjs && npm pack && node packer.js"
@@ -27,7 +29,6 @@
     "@mui/icons-material": "^5.15.17",
     "@mui/material": "^5.15.16",
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
-    "m3r": "file:m3r-lib.tgz",
     "react-dom": "^18.3.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
@@ -38,5 +39,8 @@
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
   "types": "dist/index.d.ts"
 }
