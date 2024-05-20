@@ -18,17 +18,18 @@ export const getAppBar = (theme: Theme): M3AppBar => {
         MuiAppBar: {
             defaultProps: {
                 elevation: 0,
-                color: 'default'
             },
             styleOverrides: {
-                colorDefault: {
+                root: {
+                    height: '80px',
                     background: palette.surfaceContainer.main,
-                    color: palette.onSurface.main
+                    color: palette.onSurface.main,
+                    '&.MuiPaper-root': {
+                        paddingInlineStart: '4px',
+                        paddingInlineEnd: '16px',
+                        paddingTop: '12px',
+                    },
                 },
-                colorPrimary: {
-                    background: palette.surface.main,
-                    color: palette.onSurface.main
-                }
             }
         }
     };
