@@ -16,4 +16,3 @@ export * from "./ToggleButton";
 export * from "./ToggleButtonGroup";
 export * from "./Tooltip";
 export * from "./Checkbox";
-export * from "./Autocomplete";
