@@ -15,3 +15,5 @@ export * from "./Drawer";
 export * from "./M3ListItem"
 export * from "./M3List"
 export * from "./M3Divider"
+export * from "./Dialog"
+export * from "./Transitions"

@@ -17,7 +17,8 @@ import {
     getSwitch,
     getToggleButton,
     getToggleButtonGroup,
-    getTooltip
+    getTooltip,
+    getDialog
 } from '../components';
 import { getList } from '../components/List';
 
@@ -47,6 +48,7 @@ export const getMUIComponents = (theme: Theme) => {
             ...getToggleButtonGroup(theme),
             ...getTooltip(theme),
             ...getDivider(theme),
+            ...getDialog(theme),
         }
     } as M3Components;
 };
