@@ -2,7 +2,7 @@ export * from "./Accordion";
 export * from "./Alert";
 export * from "./AppBar";
 export * from "./Avatar";
-export * from "./Badged";
+export * from "./Badge";
 export * from "./Box";
 export * from "./Button";
 export * from "./Card";
