@@ -20,6 +20,7 @@ import {
     getTooltip,
     getDialog,
     getCheckbox,
+    getSideSheet,
 } from '../components';
 import { getList } from '../components/List';
 
@@ -50,6 +51,7 @@ export const getMUIComponents = (theme: Theme) => {
             ...getDivider(theme),
             ...getDialog(theme),
             ...getCheckbox(theme),
+            ...getSideSheet(theme),
         }
     } as M3Components;
 };

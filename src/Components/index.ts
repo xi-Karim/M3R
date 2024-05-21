@@ -21,3 +21,4 @@ export * from "./M3Divider"
 export * from "./Dialog"
 export * from "./Transitions"
 export * from "./M3Typography";
+export * from "./M3SideSheet";

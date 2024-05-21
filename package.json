@@ -1,6 +1,6 @@
 {
   "name": "m3r",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Material You Components for React.",
   "files": [
   	"dist/",
@@ -39,8 +39,5 @@
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
-  "files": [
-    "dist"
-  ],
   "types": "dist/index.d.ts"
 }

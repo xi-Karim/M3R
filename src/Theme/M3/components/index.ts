@@ -19,3 +19,4 @@ export * from './Tooltip';
 export * from './Divider';
 export * from './Dialog';
 export * from "./Checkbox";
+export * from "./M3SideSheet";
