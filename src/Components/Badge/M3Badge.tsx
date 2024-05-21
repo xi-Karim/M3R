@@ -1,37 +1,15 @@
-import { Badge } from "@mui/material";
 import React from "react";
+import { Badge, BadgeProps } from "@mui/material";
 
-interface M3BadgeProps {
-  children?: React.ReactNode;
-  badgeContent?: React.ReactNode;
-  max?: number;
-  color?: "primary" | "secondary" | "error" | "info" | "success" | "warning";
-  variant?: "dot" | "standard";
-  invisible?: boolean;
-  sx?: object;
-}
+// Define additional props and modified props for M3Badge
+interface M3BadgeModifiedProps {}
 
-const M3Badge = ({
-  children,
-  badgeContent,
-  color,
-  invisible,
-  max,
-  variant,
-  sx,
-}: M3BadgeProps) => {
-  return (
-    <Badge
-      badgeContent={badgeContent}
-      max={max}
-      color={color}
-      variant={variant}
-      invisible={invisible}
-      sx={sx}
-    >
-      {children}
-    </Badge>
-  );
+// Merge the new/ props with BadgeProps
+export type M3BadgeProps = M3BadgeModifiedProps & BadgeProps;
+
+const M3Badge = (props: M3BadgeProps) => {
+  const { children } = props;
+  return <Badge {...props}>{children}</Badge>;
 };
 
 export default M3Badge;

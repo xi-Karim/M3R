@@ -1,4 +1,4 @@
-import { Theme, } from '@mui/material';
+import { Theme } from "@mui/material";
 import {
     getAccordion,
     getAlert,
@@ -18,12 +18,12 @@ import {
     getToggleButton,
     getToggleButtonGroup,
     getTooltip,
-    getDialog
+    getDialog,
+    getCheckbox,
 } from '../components';
 import { getList } from '../components/List';
 
-
-type M3Components = { components: Theme['components'] };
+type M3Components = { components: Theme["components"] };
 
 export const getMUIComponents = (theme: Theme) => {
     //const { palette } = theme;
@@ -49,6 +49,7 @@ export const getMUIComponents = (theme: Theme) => {
             ...getTooltip(theme),
             ...getDivider(theme),
             ...getDialog(theme),
+            ...getCheckbox(theme),
         }
     } as M3Components;
 };

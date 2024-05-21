@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { ThemeSchemeContext } from "../providers/ThemeSchemeProvider";
 
 export const generateRandomColor = () => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const { generateScheme } = useContext(ThemeSchemeContext);
 
   const DIGITS: string = "0123456789ABCDEF";

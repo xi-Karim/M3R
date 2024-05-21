@@ -1,13 +1,15 @@
-import { AlertTitle } from "@mui/material";
 import React from "react";
+import { AlertTitle, AlertTitleProps } from "@mui/material";
 
-interface M3AlertTitleProps {
-  children?: NonNullable<React.ReactNode>;
-  sx?: object;
-}
+// Define additional props and modified props for M3AlertTitle
+interface M3AlertTitleModifiedProps {}
 
-const M3AlertTitle = ({ children, sx }: M3AlertTitleProps) => {
-  return <AlertTitle sx={sx}>{children}</AlertTitle>;
+// Merge the new/ props with AlertTitleProps
+export type M3AlertTitleProps = M3AlertTitleModifiedProps & AlertTitleProps;
+
+const M3AlertTitle = (props: M3AlertTitleProps) => {
+  const { children } = props;
+  return <AlertTitle {...props}>{children}</AlertTitle>;
 };
 
 export default M3AlertTitle;

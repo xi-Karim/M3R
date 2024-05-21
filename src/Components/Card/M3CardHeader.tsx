@@ -1,22 +1,13 @@
 import React from "react";
-import { Avatar, CardHeader, Typography } from "@mui/material";
+import { CardHeader, CardHeaderProps } from "@mui/material";
 
-interface M3CardHeaderProps {
-  avatar?: React.ReactNode;
-  title?: string;
-  subheader?: string;
-  sx?: object;
-}
+// Define additional props and modified props for M3CardHeader
+interface M3CardHeaderModifiedProps {}
 
-const M3CardHeader = ({ avatar, title, subheader, sx }: M3CardHeaderProps) => {
-  return (
-    <CardHeader
-      avatar={avatar && <Avatar>{avatar}</Avatar>}
-      title={title}
-      subheader={subheader}
-      sx={sx}
-    />
-  );
+// Merge the new/ props with CardHeaderProps
+export type M3CardHeaderProps = M3CardHeaderModifiedProps & CardHeaderProps;
+
+const M3CardHeader = (props: M3CardHeaderProps) => {
+  return <CardHeader {...props} />;
 };
-
 export default M3CardHeader;
