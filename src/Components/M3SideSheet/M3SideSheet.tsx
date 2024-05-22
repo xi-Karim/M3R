@@ -11,7 +11,7 @@ import {
 import { Close } from "@mui/icons-material";
 import { M3Button } from "../Button";
 
-interface M3SideSheetProps extends DrawerProps {
+export interface M3SideSheetProps extends DrawerProps {
   title: string;
   sheetStyle: "standard" | "modal";
   open?: boolean;
