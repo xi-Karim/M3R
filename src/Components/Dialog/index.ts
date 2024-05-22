@@ -1,4 +1,5 @@
 export {default as M3Dialog} from './M3Dialog'
+export * from './M3Dialog'
 export {default as M3DialogActions} from './M3DialogActions'
 export {default as M3DialogContent} from './M3DialogContent'
 export {default as M3DialogContentText} from './M3DialogContentText'
