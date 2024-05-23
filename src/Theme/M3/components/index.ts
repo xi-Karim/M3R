@@ -18,5 +18,6 @@ export * from './ToggleButtonGroup';
 export * from './Tooltip';
 export * from './Divider';
 export * from './Dialog';
-export * from "./Checkbox";
-export * from "./M3SideSheet";
+export * from './Checkbox';
+export * from './M3SideSheet';
+export * from './M3MenuItem';

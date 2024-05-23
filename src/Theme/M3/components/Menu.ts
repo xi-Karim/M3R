@@ -1,4 +1,3 @@
-
 import {
     Theme,
     ComponentsProps, ComponentsOverrides, ComponentsVariants
@@ -16,14 +15,16 @@ export const getMenu = (theme: Theme): M3Menu => {
     const { palette } = theme;
     return {
         MuiMenu: {
-            defaultProps: { color: 'default' },
             styleOverrides: {
                 root: {
                 },
                 paper: {
-                    backgroundColor: palette.surfaceContainerLow.main,
-                    boxShadow: theme.shadows[3],
-                    color: palette.onSurface.main
+                    backgroundColor: palette.surfaceContainer.main,
+                    boxShadow: theme.shadows[2],
+                    color: palette.onSurface.main,
+                    minWidth: '168px', // Calculated for hdpi screen.
+                    maxWidth: '420px', // Calculated for hdpi screen.
+                    borderRadius: '6px', // Calculated for hdpi screen.
                 }
             }
         }
