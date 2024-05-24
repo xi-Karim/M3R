@@ -1,7 +1,7 @@
 import { Dialog, DialogProps } from "@mui/material";
-import React, { MouseEventHandler, RefObject } from "react";
+import React, { MouseEventHandler, useState, useEffect } from "react";
 
-interface M3DialogProps extends DialogProps{
+export interface M3DialogProps extends DialogProps{
   children?: React.ReactNode;
   open: boolean;
   disableEscapeKeyDown?: boolean;
@@ -9,8 +9,8 @@ interface M3DialogProps extends DialogProps{
   fullWidth?: boolean;
   maxWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | false | undefined;
   TransitionComponent: React.ComponentType<any>;
-  onClick?: MouseEventHandler<HTMLDivElement>; // Corrected type
-  onClose?: (event: React.SyntheticEvent, reason: string) => void; // Corrected type
+  onClick?: MouseEventHandler<HTMLDivElement>;
+  onClose?: () => void;
   scroll?: 'body' | 'paper';
   sx?: object;
 }
@@ -21,25 +21,36 @@ const M3Dialog = ({
   fullScreen,
   fullWidth,
   maxWidth,
-  onClose,
+  onClose = () => {},
   scroll,
   open,
   sx,
   onClick,
   TransitionComponent
 }: M3DialogProps) => {
+  const [dialogOpen, setDialogOpen] = useState(open);
+
+  useEffect(() => {
+    setDialogOpen(open);
+  }, [open]);
+
+  const handleClose = () => {
+    setDialogOpen(false);
+    onClose();
+  }
+  
   return (
     <Dialog
       disableEscapeKeyDown={disableEscapeKeyDown}
       fullScreen={fullScreen}
-      open={open}
+      open={dialogOpen}
       scroll={scroll}
       sx={sx}
       fullWidth={fullWidth}
       maxWidth={maxWidth}
       TransitionComponent={TransitionComponent}
-      onClose={onClose} // Passing onClose
-      onClick={onClick} // Passing onClick
+      onClose={handleClose}
+      onClick={onClick}
     >
       {children}
     </Dialog>

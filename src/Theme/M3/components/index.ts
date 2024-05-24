@@ -20,3 +20,5 @@ export * from "./Divider";
 export * from "./Dialog";
 export * from "./Checkbox";
 export * from "./Autocomplete";
+export * from "./M3SideSheet";
+export * from "./M3MenuItem";

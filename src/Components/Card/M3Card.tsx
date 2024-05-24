@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, CardProps } from "@mui/material";
-import { StateLayer, ThemeContext, getStateLayerColor } from "../../Theme";
+import { StateLayer, ThemeContext, getStateLayerColor } from "../..";
 
 // Define additional props and modified props for M3Card
 interface M3CardModifiedProps {}

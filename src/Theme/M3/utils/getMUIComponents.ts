@@ -14,12 +14,14 @@ import {
   getListItemButton,
   getListItemIcon,
   getMenu,
+  getMenuItem,
   getSwitch,
   getToggleButton,
   getToggleButtonGroup,
   getTooltip,
   getDialog,
   getCheckbox,
+  getSideSheet,
   getAutocomplete,
 } from "../components";
 import { getList } from "../components/List";
@@ -27,6 +29,7 @@ import { getList } from "../components/List";
 type M3Components = { components: Theme["components"] };
 
 export const getMUIComponents = (theme: Theme) => {
+  //const { palette } = theme;
   return {
     components: {
       ...getCssBaseline(theme),
@@ -43,6 +46,7 @@ export const getMUIComponents = (theme: Theme) => {
       ...getListItemButton(theme),
       ...getListItemIcon(theme),
       ...getMenu(theme),
+      ...getMenuItem(theme),
       ...getSwitch(theme),
       ...getToggleButton(theme),
       ...getToggleButtonGroup(theme),
@@ -50,6 +54,7 @@ export const getMUIComponents = (theme: Theme) => {
       ...getDivider(theme),
       ...getDialog(theme),
       ...getCheckbox(theme),
+      ...getSideSheet(theme),
       ...getAutocomplete(theme),
     },
   } as M3Components;
