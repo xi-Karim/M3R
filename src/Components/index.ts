@@ -26,3 +26,4 @@ export * from "./M3Menu";
 export * from "./M3MenuItem";
 export * from "./M3NestedMenuItem";
 export * from "./M3IconMenuItem";
+export * from "./M3TimePicker";
