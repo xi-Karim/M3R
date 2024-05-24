@@ -15,9 +15,10 @@ export * from "./Switch";
 export * from "./ToggleButton";
 export * from "./Tooltip";
 export * from "./Drawer";
-export * from "./M3ListItem"
-export * from "./M3List"
-export * from "./M3Divider"
-export * from "./Dialog"
-export * from "./Transitions"
+export * from "./M3ListItem";
+export * from "./M3List";
+export * from "./M3Divider";
+export * from "./Dialog";
+export * from "./Transitions";
 export * from "./M3Typography";
+export * from "./Autocomplete";

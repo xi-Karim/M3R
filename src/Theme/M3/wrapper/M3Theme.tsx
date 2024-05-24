@@ -4,6 +4,7 @@ import { CssBaseline, createTheme, ThemeProvider, Theme } from "@mui/material";
 import { deepmerge } from "@mui/utils";
 
 import {
+  ThemeContext,
   ThemeModeContext,
   ThemeSchemeContext,
   getMUIComponents,
@@ -17,11 +18,10 @@ interface M3Props {
   enteredThemeMode?: "light" | "dark";
 }
 
-export let theme: Theme;
-
 const M3Theme = ({ children, themeColor, enteredThemeMode }: M3Props) => {
   const { themeMode, setThemeMode } = useContext(ThemeModeContext);
   const { themeScheme, generateScheme } = useContext(ThemeSchemeContext);
+  const { setThemeObj } = useContext(ThemeContext);
 
   useEffect(() => {
     generateScheme(themeColor || "#005fb0");
@@ -33,11 +33,15 @@ const M3Theme = ({ children, themeColor, enteredThemeMode }: M3Props) => {
 
     const muiTypography = getTypography();
 
-    theme = createTheme({ ...muiPalette, ...muiTypography });
+    let theme = createTheme({ ...muiPalette, ...muiTypography });
     theme = deepmerge(theme, getMUIComponents(theme));
 
     return theme;
   }, [themeMode, themeScheme]);
+
+  useEffect(() => {
+    setThemeObj(m3Theme);
+  }, [m3Theme, setThemeObj]);
 
   return (
     <ThemeProvider theme={m3Theme}>

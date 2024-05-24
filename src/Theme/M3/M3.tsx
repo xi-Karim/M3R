@@ -2,6 +2,7 @@ import React from "react";
 import ThemeModeProvider from "./providers/ThemeModeProvider";
 import ThemeSchemeProvider from "./providers/ThemeSchemeProvider";
 import M3Theme from "./wrapper/M3Theme";
+import ThemeObjProvider from "./providers/ThemeObjProvider";
 
 interface M3Props {
   children?: React.ReactNode;
@@ -14,9 +15,11 @@ const M3 = ({ children, themeColor, themeMode }: M3Props) => {
     // ThemeModeProvider -> ThemeSchemeProvider
     <ThemeModeProvider>
       <ThemeSchemeProvider>
-        <M3Theme themeColor={themeColor} enteredThemeMode={themeMode}>
-          {children}
-        </M3Theme>
+        <ThemeObjProvider>
+          <M3Theme themeColor={themeColor} enteredThemeMode={themeMode}>
+            {children}
+          </M3Theme>
+        </ThemeObjProvider>
       </ThemeSchemeProvider>
     </ThemeModeProvider>
   );
