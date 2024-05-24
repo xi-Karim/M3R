@@ -22,6 +22,7 @@ import {
     getDialog,
     getCheckbox,
     getSideSheet,
+    getDatePicker
 } from '../components';
 import { getList } from '../components/List';
 
@@ -54,6 +55,7 @@ export const getMUIComponents = (theme: Theme) => {
             ...getDialog(theme),
             ...getCheckbox(theme),
             ...getSideSheet(theme),
+            ...getDatePicker(theme),
         }
     } as M3Components;
 };
