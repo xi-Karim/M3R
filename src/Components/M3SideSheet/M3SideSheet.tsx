@@ -87,7 +87,7 @@ const M3SideSheet = ({
               {title}
             </Typography>
             <IconButton onClick={(event) => handleClose(event, 'iconClick')}>
-              <Close sx={{ color: "white" }} />
+              <Close/>
             </IconButton>
           </Toolbar>
         )}

@@ -23,4 +23,5 @@ export * from "./Autocomplete";
 export * from "./M3SideSheet";
 export * from "./M3MenuItem";
 export * from "./DatePicker";
-export * from './M3TextField';
+export * from "./M3TextField";
+export * from "./Icon";
