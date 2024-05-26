@@ -26,8 +26,9 @@ import {
   getDatePicker,
   getTextField,
   getIcon,
+  getList,
+  getTable,
 } from "../components";
-import { getList } from "../components/List";
 
 type M3Components = { components: Theme["components"] };
 
@@ -62,6 +63,7 @@ export const getMUIComponents = (theme: Theme) => {
       ...getDatePicker(theme),
       ...getTextField(theme),
       ...getIcon(theme),
+      ...getTable(theme),
     },
   } as M3Components;
 };

@@ -25,3 +25,4 @@ export * from "./M3MenuItem";
 export * from "./DatePicker";
 export * from "./M3TextField";
 export * from "./Icon";
+export * from "./Table";

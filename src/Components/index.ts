@@ -30,3 +30,4 @@ export * from "./M3IconMenuItem";
 export * from "./M3DatePicker";
 export * from "./M3TextField";
 export * from "./M3Search";
+export * from "./Table";
