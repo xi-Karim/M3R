@@ -15,8 +15,10 @@ export * from "./M3/utils/generateRandomColor";
 export * from "./M3/utils/getTypography";
 
 export * from "./M3/components";
+export * from "./M3/wrapper/M3Theme";
 
 export * from "./M3/providers/ThemeModeProvider";
 export * from "./M3/providers/ThemeSchemeProvider";
+export * from "./M3/providers/ThemeObjProvider";
 
 export { default as M3Provider } from "./M3/M3";

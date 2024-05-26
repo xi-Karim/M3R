@@ -1,7 +1,6 @@
 import React from "react";
 import { Card, CardProps } from "@mui/material";
-import { StateLayer, getStateLayerColor } from '../..';
-import { theme } from "../../Theme/M3/wrapper/M3Theme";
+import { StateLayer, ThemeContext, getStateLayerColor } from "../..";
 
 // Define additional props and modified props for M3Card
 interface M3CardModifiedProps {}
@@ -10,9 +9,36 @@ interface M3CardModifiedProps {}
 export type M3CardProps = M3CardModifiedProps & CardProps;
 
 const M3Card = (props: M3CardProps) => {
-  const { palette } = theme;
   const { children, variant = "elevation" } = props;
+  const { themeObj: theme } = React.useContext(ThemeContext);
+
+  // State for storage the stop clicking effect style for the card
   const [stopClickEffect, setStopClickEffect] = React.useState({});
+
+  // States for storage the changable styles for the card
+  const [boxShadowStyle, setBoxShadowStyle] = React.useState({});
+  const [backgroundStyle, setBackgroundStyle] = React.useState({});
+
+  // Change the style whatever the variant or palette changes
+  React.useEffect(() => {
+    setBoxShadowStyle({
+      boxShadow: theme?.shadows[variant === "elevation" ? 2 : 1],
+    });
+    theme &&
+      setBackgroundStyle({
+        background: getStateLayerColor(
+          StateLayer.Hover,
+          theme?.palette[
+            variant === "elevation"
+              ? "surfaceContainerLow"
+              : variant === "filled"
+              ? "surfaceContainerHighest"
+              : "surface"
+          ].main,
+          theme?.palette.primary.main
+        ),
+      });
+  }, [variant, theme]);
 
   return (
     <Card
@@ -20,6 +46,7 @@ const M3Card = (props: M3CardProps) => {
       style={{ ...stopClickEffect, ...props.style }}
       variant={props.variant || "elevation"}
     >
+      {/* Loop on children for pick the M3CardActions component which is the component from which the propagation will be stopped */}
       {React.Children.map(children, (child) => {
         if (
           React.isValidElement(child) &&
@@ -29,20 +56,7 @@ const M3Card = (props: M3CardProps) => {
         ) {
           return React.cloneElement(child, {
             onMouseDown: () => {
-              setStopClickEffect({
-                boxShadow: theme.shadows[variant === "elevation" ? 2 : 1],
-                background: getStateLayerColor(
-                  StateLayer.Hover,
-                  palette[
-                    variant === "elevation"
-                      ? "surfaceContainerLow"
-                      : variant === "filled"
-                        ? "surfaceContainerHighest"
-                        : "surface"
-                  ].main,
-                  palette.primary.main
-                ),
-              });
+              setStopClickEffect({ ...boxShadowStyle, ...backgroundStyle });
             },
             onMouseUp: () => {
               setStopClickEffect({});
