@@ -1,7 +1,6 @@
-import { Theme } from "@mui/material";
+import { Theme, alpha } from "@mui/material";
 import { PickerComponentsOverrides } from "../utils/getPickerComponents";
-import { PickersComponentsPropsList, PickersComponentNameToClassKey } from '@mui/x-date-pickers/themeAugmentation';
-import { Margin } from "@mui/icons-material";
+import { PickersComponentsPropsList } from '@mui/x-date-pickers/themeAugmentation';
 
 interface M3DatePicker {
 
@@ -75,13 +74,19 @@ export const getDatePicker = (theme: Theme): M3DatePicker => {
         root: {
           maxHeight: 'none',
           height: 'auto',
-        }
+        },
       },
     },
     MuiPickersDay: {
       styleOverrides: {
         root: {
           margin: '0 3px',
+        },
+        dayWithMargin: {
+          color: alpha(palette.onSurface.main, 0.38),
+        },
+        dayOutsideMonth: {
+          color: palette.onSurface.main,
         },
       },
     },

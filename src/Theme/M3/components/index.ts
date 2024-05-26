@@ -24,3 +24,7 @@ export * from "./M3SideSheet";
 export * from "./M3MenuItem";
 export * from "./DatePicker";
 export * from "./TimePicker";
+export * from "./M3TextField";
+export * from "./Icon";
+export * from "./Table";
+

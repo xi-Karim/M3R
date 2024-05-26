@@ -25,8 +25,11 @@ import {
   getAutocomplete,
   getDatePicker,
   getTimePicker
+  getTextField,
+  getIcon,
+  getList,
+  getTable,
 } from "../components";
-import { getList } from "../components/List";
 
 type M3Components = { components: Theme["components"] };
 
@@ -60,6 +63,9 @@ export const getMUIComponents = (theme: Theme) => {
       ...getAutocomplete(theme),
       ...getDatePicker(theme),
       ...getTimePicker(theme)
+      ...getTextField(theme),
+      ...getIcon(theme),
+      ...getTable(theme),
     },
   } as M3Components;
 };

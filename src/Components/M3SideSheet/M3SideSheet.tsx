@@ -9,17 +9,15 @@ import {
   Box,
 } from "@mui/material";
 import { Close } from "@mui/icons-material";
-import { M3Button } from "../Button";
 
 export interface M3SideSheetProps extends DrawerProps {
   title: string;
-  sheetStyle: "standard" | "modal";
+  isModal?: boolean;
   open?: boolean;
   onClose?: (event: React.SyntheticEvent, reason: string) => void;
   children?: React.ReactNode;
   sx?: object;
   PaperProps?: DrawerProps["PaperProps"];
-  actions?: boolean;
   width?: string | number;
 }
 
@@ -31,8 +29,7 @@ const M3SideSheet = ({
   title,
   sx,
   PaperProps,
-  sheetStyle,
-  actions = false,
+  isModal = true,
   width = 350,
 }: M3SideSheetProps) => {
   const [isSheetOpen, setSheetOpen] = useState(open);
@@ -50,12 +47,17 @@ const M3SideSheet = ({
     ...PaperProps,
     sx: {
       ...(PaperProps?.sx || {}),
-      borderTopLeftRadius: sheetStyle === "modal" ? "16px" : "0px",
-      borderBottomLeftRadius: sheetStyle === "modal" ? "16px" : "0px",
-      borderLeft: sheetStyle === "standard" ? "1px solid #79747E" : "none",
+      borderTopLeftRadius: isModal ? "16px" : "0px",
+      borderBottomLeftRadius: isModal ? "16px" : "0px",
+      borderLeft: isModal ? "none" : "1px solid #79747E",
       width,
     },
   };
+
+  // Convert children to an array
+  const childrenArray = React.Children.toArray(children);
+  const actions = childrenArray.find((child: any) => child.type?.displayName === 'M3SideSheetActions');
+  const content = childrenArray.filter((child: any) => child.type?.displayName !== 'M3SideSheetActions');
 
   return (
     <Drawer
@@ -85,40 +87,16 @@ const M3SideSheet = ({
               {title}
             </Typography>
             <IconButton onClick={(event) => handleClose(event, 'iconClick')}>
-              <Close sx={{ color: "white" }} />
+              <Close/>
             </IconButton>
           </Toolbar>
         )}
-        <Box
-          style={{
-            flexGrow: 1,
-            overflowY: "auto",
-            paddingLeft: "24px",
-            paddingRight: "24px",
-            width: "100%",
-          }}
-        >
-          {children}
+        <Box sx={{ flexGrow: 1, overflowY: "auto", padding: "24px", width: "100%" }}>
+          {content}
         </Box>
-        {actions && (
-          <>
-            <Divider />
-            <Toolbar
-              sx={{
-                justifyContent: "flex-start",
-                paddingLeft: "0px",
-                paddingRight: "0px",
-              }}
-            >
-              <M3Button variant="filled" onClick={(event) => handleClose(event, 'saveButton')} sx={{ mr: 1 }}>
-                Save
-              </M3Button>
-              <M3Button variant="outlined" onClick={(event) => handleClose(event, 'cancelButton')}>
-                Cancel
-              </M3Button>
-            </Toolbar>
-          </>
-        )}
+        <Box sx={{ flexShrink: 0 }}>
+          {actions}
+        </Box>
       </Box>
     </Drawer>
   );
