@@ -165,6 +165,29 @@ export const getTypography = () => {
         letterSpacing: '0.4px',
         fontWeight: '400',
       },
-    }
+    },
+    components: {
+      MuiTypography: {
+        defaultProps: {
+          variantMapping: {
+            displayLarge: 'h1',
+            displayMedium: 'h1',
+            displaySmall: 'h1',
+            headlineLarge: 'h2',
+            headlineMedium: 'h2',
+            headlineSmall: 'h2',
+            titleLarge: 'h3',
+            titleMedium: 'h3',
+            titleSmall: 'h3',
+            labelLarge: 'span',
+            labelMedium: 'span',
+            labelSmall: 'span',
+            bodyLarge: 'span',
+            bodyMedium: 'span',
+            bodySmall: 'span',
+          },
+        },
+      },
+    },
   }
 }
