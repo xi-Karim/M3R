@@ -38,8 +38,114 @@ export const getTextField = (theme: Theme): M3Button => {
         {
           props: { variant: "filled" },
           style: {
-            //# crate color
-            caret: palette.onSurfaceVariant.main,
+            height: '56px',
+            boxShadow: theme.shadows[0],
+            caret: palette.primary.main,
+            color: palette.onSurface.main,
+            backgroundColor: palette.surfaceContainerHighest.main,
+            fontSize: theme.typography.bodyLarge.fontSize,
+            lineHeight: theme.typography.bodyLarge.lineHeight,
+            letterSpacing: theme.typography.bodyLarge.letterSpacing,
+            fontWeight: theme.typography.bodyLarge.fontWeight,
+
+            label: {
+              color: palette.onSurfaceVariant.main,
+              fontSize: theme.typography.bodyLarge.fontSize,
+              lineHeight: theme.typography.bodyLarge.lineHeight,
+              fontWeight: theme.typography.bodyLarge.fontWeight,
+              "&[data-shrink='true']": {
+                fontSize: theme.typography.bodySmall.fontSize,
+                lineHeight: theme.typography.bodySmall.lineHeight,
+              },
+              '&.Mui-disabled': {
+                background: 'transparent',
+              }
+            },
+
+            "& .MuiFormHelperText-root": {
+              fontSize: theme.typography.bodySmall.fontSize,
+              lineHeight: theme.typography.bodySmall.lineHeight,
+              letterSpacing: theme.typography.bodySmall.letterSpacing,
+              fontWeight: theme.typography.bodySmall.fontWeight,
+              '&.Mui-disabled': {
+                background: 'transparent',
+              }
+            },
+
+            "& .MuiSvgIcon": {
+              color: palette.onSurfaceVariant.main,
+              width: '24px',
+              height: '24px',
+            },
+
+            "& .Mui-disabled": {
+              background: alpha(palette.onSurface.main, 0.04),
+              color: alpha(palette.onSurface.main, 0.38),
+            },
+
+            "&:hover": {
+              color: palette.onSurface.main,
+              background: getStateLayerColor(StateLayer.Hover, palette.surface.main, palette.onSurface.main),
+              label: {
+                color: palette.onSurfaceVariant.main,
+                "&.Mui-error": {
+                  color: palette.error.main,
+                }
+              },
+              "& .MuiSvgIcon": {
+                color: palette.onSurfaceVariant.main,
+                "&.Mui-error": {
+                  color: palette.error.main,
+                }
+              },
+              "& .MuiFormHelperText-root": {
+                color: palette.onSurfaceVariant.main,
+                "&.Mui-error": {
+                  color: palette.error.main,
+                },
+              },
+            },
+
+            "&:focus": {
+              label: {
+                color: palette.primary.main
+              },
+              "& .MuiSvgIcon": {
+                color: palette.onSurfaceVariant.main,
+              },
+              "& .MuiFormHelperText-root": {
+                color: palette.onSurfaceVariant.main,
+              },
+            },
+
+            "& .Mui-error": {
+              label: {
+                color: palette.error.main,
+              },
+              "& .MuiSvgIcon": {
+                color: palette.error.main,
+              },
+              "& .MuiFormHelperText-root": {
+                color: palette.error.main,
+              },
+              borderColor: palette.error.main,
+            },
+
+          },
+        },
+
+        {
+          props: { variant: "outlined" },
+          style: {
+            height: '56px',
+            caret: palette.primary.main,
+            color: palette.onSurface.main,
+            fontSize: theme.typography.bodyLarge.fontSize,
+            lineHeight: theme.typography.bodyLarge.lineHeight,
+            letterSpacing: theme.typography.bodyLarge.letterSpacing,
+            fontWeight: theme.typography.bodyLarge.fontWeight,
+            borderColor: palette.outline.main,
+
             label: {
               color: palette.onSurfaceVariant.main,
               fontSize: theme.typography.bodyLarge.fontSize,
@@ -50,105 +156,76 @@ export const getTextField = (theme: Theme): M3Button => {
                 lineHeight: theme.typography.bodySmall.lineHeight,
               },
             },
-            color: palette.onPrimary.main,
-            boxShadow: theme.shadows[0],
-            "&.Mui-disabled": {
-              backgroundColor: alpha(palette.onSurface.main, 0.12),
-              color: alpha(palette.onSurface.main, 0.04),
-              boxShadow: theme.shadows[0],
-            },
-            // referees to the help text color
-            ".MuiFormHelperText-root": {
-              //todo:add typography fonts from theme :
-              //typeScale.body-Small
-              //font-Roboto
-              fontSize: theme.typography.bodyLarge.fontSize,
-              lineHeight: theme.typography.bodyLarge.lineHeight,
-              letterSpacing: theme.typography.bodyLarge.letterSpacing,
+
+            "& .MuiSvgIcon": {
               color: palette.onSurfaceVariant.main,
+              width: '24px',
+              height: '24px',
+            },
+
+            "& .MuiFormHelperText-root": {
+              fontSize: theme.typography.bodySmall.fontSize,
+              lineHeight: theme.typography.bodySmall.lineHeight,
+              letterSpacing: theme.typography.bodySmall.letterSpacing,
+              fontWeight: theme.typography.bodySmall.fontWeight,
+            },
+
+            "& .Mui-disabled": {
+              outlineColor: alpha(palette.onSurface.main, 0.12),
+              color: alpha(palette.onSurface.main, 0.38),
+              "&.Mui-error": {
+                color: palette.error.main,
+              },
             },
 
             "&:hover": {
-              ".MuiFormHelperText-root": {
+              color: palette.onSurface.main,
+              outlineColor: palette.onSurface.main,
+              label: {
+                color: palette.onSurfaceVariant.main,
+                "&.Mui-error": {
+                  color: palette.error.main,
+                }
+              },
+              "& .MuiSvgIcon": {
+                color: palette.onSurfaceVariant.main,
+                "&.Mui-error": {
+                  color: palette.error.main,
+                }
+              },
+              "& .MuiFormHelperText-root": {
+                color: palette.onSurfaceVariant.main,
+                "&.Mui-error": {
+                  color: palette.error.main,
+                }
+              },
+            },
+
+            "&:focus": {
+              label: {
+                color: palette.primary.main
+              },
+              "& .MuiSvgIcon": {
                 color: palette.onSurfaceVariant.main,
               },
+              "& .MuiFormHelperText-root": {
+                color: palette.onSurfaceVariant.main,
+              },
+              outlineColor: palette.primary.main
+            },
 
-              backgroundColor: getStateLayerColor(
-                StateLayer.Hover,
-                palette.surface.main,
-                palette.onSurface.main
-              ),
+            "& .Mui-error": {
+              label: {
+                color: palette.error.main,
+              },
+              "& .MuiSvgIcon": {
+                color: palette.error.main,
+              },
+              "& .MuiFormHelperText-root": {
+                color: palette.error.main,
 
-              color: palette.onSurface.main,
-
-              boxShadow: theme.shadows[1],
-            },
-            "&:focus": {
-              backgroundColor: getStateLayerColor(
-                StateLayer.Focus,
-                palette.primary.main,
-                palette.onPrimary.main
-              ),
-              boxShadow: theme.shadows[0],
-            },
-            "&:active": {
-              backgroundColor: getStateLayerColor(
-                StateLayer.Press,
-                palette.primary.main,
-                palette.onPrimary.main
-              ),
-              boxShadow: theme.shadows[0],
-            },
-          },
-        },
-
-        {
-          props: { variant: "outlined" },
-          style: {
-            //backgroundColor: palette.surface.main,
-            color: palette.primary.main,
-            borderColor: palette.outline.main,
-            borderWidth: "1px",
-            boxShadow: theme.shadows[0],
-            "&.Mui-disabled": {
-              borderColor: alpha(palette.onSurface.main, 0.12),
-              color: alpha(palette.onSurface.main, 0.38),
-            },
-            "&:hover": {
-              backgroundColor: getStateLayerColor(
-                StateLayer.Hover,
-                palette.surface.main,
-                palette.primary.main
-              ),
-              borderColor: getStateLayerColor(
-                StateLayer.Hover,
-                palette.outline.main,
-                palette.primary.main
-              ),
-            },
-            "&:focus": {
-              backgroundColor: getStateLayerColor(
-                StateLayer.Focus,
-                palette.surface.main,
-                palette.primary.main
-              ),
-              borderColor: getStateLayerColor(
-                StateLayer.Focus,
-                palette.primary.main,
-                palette.primary.main
-              ),
-            },
-            "&:active": {
-              backgroundColor: getStateLayerColor(
-                StateLayer.Press,
-                palette.surface.main,
-                palette.primary.main
-              ),
-              borderColor: getStateLayerColor(
-                StateLayer.Press,
-                palette.outline.main,
-                palette.primary.main
-              ),
+              },
+              borderColor: palette.error.main,
             },
           },
         },
