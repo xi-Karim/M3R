@@ -52,7 +52,7 @@ export const getTimePicker = (theme: Theme): M3DatePicker => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          '& > button': { // Targeting the button directly inside hourMinuteLabel
+          '& > button': { 
             backgroundColor: palette.surfaceContainerHighest.main,
             height: "100%",
             width: "100%",
@@ -76,7 +76,7 @@ export const getTimePicker = (theme: Theme): M3DatePicker => {
           outlineColor: palette.outline.main,
           outlineWidth: "1px",
           outlineStyle: "solid",
-          '& > button': { // Targeting the button directly inside hourMinuteLabel
+          '& > button': { 
             height: "100%",
             width: "100%",
             borderRadius: "8px",

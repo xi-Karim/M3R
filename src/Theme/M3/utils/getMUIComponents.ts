@@ -24,6 +24,7 @@ import {
   getSideSheet,
   getAutocomplete,
   getDatePicker,
+  getTimePicker
 } from "../components";
 import { getList } from "../components/List";
 
@@ -58,6 +59,7 @@ export const getMUIComponents = (theme: Theme) => {
       ...getSideSheet(theme),
       ...getAutocomplete(theme),
       ...getDatePicker(theme),
+      ...getTimePicker(theme)
     },
   } as M3Components;
 };
