@@ -1,8 +1,7 @@
 import React from "react";
 import { Divider, ListItem, ListItemProps, ListItemText, Stack, Typography } from "@mui/material";
-import { ListItemAvatar, ListItemIcon, ListItemButton } from '@mui/material';
 
-interface M3ListItemProps extends ListItemProps {
+export interface M3ListItemProps extends ListItemProps {
   children?: React.ReactNode;
   leading?: React.ReactNode;
   trailing?: React.ReactNode;

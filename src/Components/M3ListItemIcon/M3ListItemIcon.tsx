@@ -1,9 +1,9 @@
 import React from "react";
 import { ListItemIcon, ListItemIconProps } from "@mui/material";
 
-interface M3ListItemProps extends ListItemIconProps { children?: React.ReactNode }
+export interface M3ListItemIconProps extends ListItemIconProps { children?: React.ReactNode }
 
-export default function M3ListItem(props: M3ListItemProps) {
+export default function M3ListItemIcon(props: M3ListItemIconProps) {
   const { children } = props;
 
   return (

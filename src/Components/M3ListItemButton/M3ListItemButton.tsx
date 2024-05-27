@@ -1,7 +1,7 @@
 import React from "react";
 import { Divider, ListItemButton, ListItemButtonProps, Stack, Typography } from "@mui/material";
 
-interface M3ListItemProps extends ListItemButtonProps {
+export interface M3ListItemButtonProps extends ListItemButtonProps {
   children?: React.ReactNode;
   leading?: React.ReactNode;
   trailing?: React.ReactNode;
@@ -12,7 +12,7 @@ interface M3ListItemProps extends ListItemButtonProps {
   dividerVariant?: "fullWidth" | "inset" | "middle" | undefined;
 }
 
-export default function M3ListItem(props: M3ListItemProps) {
+export default function M3ListItemButton(props: M3ListItemButtonProps) {
   const {
     children,
     divider = false,
