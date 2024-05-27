@@ -14,9 +14,10 @@ export const getListItemIcon = (theme: Theme): M3ListItemIcon => {
         MuiListItemIcon: {
             styleOverrides: {
                 root: {
-                    color: 'inherit',
+                    color: palette.onSurfaceVariant.main,
                     minWidth: '24px',
-                    '&.Mui-selected': {
+                    height: '56px',
+                    '& .Mui-selected': {
                         color: palette.primary.main
                     },
                 },

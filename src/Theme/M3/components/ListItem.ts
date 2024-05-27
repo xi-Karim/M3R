@@ -1,4 +1,4 @@
-import { Theme, ComponentsProps, ComponentsOverrides, ComponentsVariants, alpha } from "@mui/material";
+import { Theme, ComponentsProps, ComponentsOverrides, ComponentsVariants } from "@mui/material";
 import { getStateLayerColor, StateLayer } from "../utils/getStayeLayerColor";
 
 interface M3ListItem {
@@ -29,30 +29,7 @@ export const getListItem = (theme: Theme): M3ListItem => {
                     paddingX: 0,
 
                     overflow: 'hidden',
-                    //STATE
-                    '&:hover': {
-                        color: palette.onSurface.main,
-                        background: getStateLayerColor(StateLayer.Hover, palette.onSurface.main, palette.onSurface.main),
-                        '& .MuiListItemIcon-root': {
-                            color: palette.onSurfaceVariant.main,
-                        },
-                    },
 
-                    '&:focus': {
-                        color: palette.onSurface.main,
-                        backgroundColor: getStateLayerColor(StateLayer.Focus, palette.onSurface.main, palette.onSurface.main),
-                        '& .MuiListItemIcon-root': {
-                            color: palette.onSurfaceVariant.main,
-                        },
-                    },
-
-                    '&.Mui-disabled': {
-                        color: alpha(palette.onSurface.main, 0.38),
-                    },
-
-                    //drag state
-
-                    //ELEMENTS
                     '& .MuiListItemText-root': {
                         marginInlineStart: '16px',
                     },
