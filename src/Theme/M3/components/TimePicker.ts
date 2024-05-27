@@ -1,4 +1,4 @@
-import { Theme, colors } from "@mui/material";
+import { Theme, ComponentsOverrides, ComponentsPropsList, } from "@mui/material";
 import { PickerComponentsOverrides } from "../utils/getPickerComponents";
 import { PickersComponentsPropsList, PickersComponentNameToClassKey } from '@mui/x-date-pickers/themeAugmentation';
 
@@ -15,21 +15,25 @@ interface M3DatePicker {
   };
 
   MuiDialog?: {
-    defaultProps?: PickersComponentsPropsList['MuiDialog'];
-    styleOverrides?: PickerComponentsOverrides<Theme>['MuiDialog'];
+    defaultProps?: ComponentsPropsList['MuiDialog'];
+    styleOverrides?: ComponentsOverrides<Theme>['MuiDialog'];
   };
+
   MuiClockPointer?: {
     defaultProps?: PickersComponentsPropsList['MuiClockPointer'];
     styleOverrides?: PickerComponentsOverrides<Theme>['MuiClockPointer'];
   };
+
   MuiClockNumber?: {
     defaultProps?: PickersComponentsPropsList['MuiClockNumber'];
     styleOverrides?: PickerComponentsOverrides<Theme>['MuiClockNumber'];
   };
+
   MuiTimeClock?: {
     defaultProps?: PickersComponentsPropsList['MuiTimeClock'];
     styleOverrides?: PickerComponentsOverrides<Theme>['MuiTimeClock'];
   };
+
 }
 
 export const getTimePicker = (theme: Theme): M3DatePicker => {
@@ -94,46 +98,39 @@ export const getTimePicker = (theme: Theme): M3DatePicker => {
         }
       },
     },
-    MuiPickersPopper: {
-      styleOverrides: {
-        paper: {
-        
-        },
-      },
-    },
     MuiDialog: {
       styleOverrides: {
         paper: {
-       borderRadius:"28px",
-       backgroundColor: palette.surfaceContainerHigh.main
+          borderRadius:"28px",
+          backgroundColor: palette.surfaceContainerHigh.main
         },
       },
     },
     MuiClockPointer: {
       styleOverrides: {
         root: {
-  backgroundColor:palette.primary.main,
-  color:palette.onPrimary.main
+          backgroundColor:palette.primary.main,
+          color:palette.onPrimary.main
         },
         thumb: {
-  backgroundColor:"transparent",
+          backgroundColor:"transparent",
         },
       },
     },
     MuiClockNumber: {
       styleOverrides: {
         root: {
-  color:palette.onSurface.main
+          color:palette.onSurface.main
         },
         selected: {
-  color:palette.onPrimary.main
+          color:palette.onPrimary.main
         }
       },
     },
     MuiTimeClock: {
       styleOverrides: {
         arrowSwitcher: {
- display:"none"
+          display:"none"
         },
       },
     },

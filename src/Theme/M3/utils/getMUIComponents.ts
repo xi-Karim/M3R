@@ -24,7 +24,7 @@ import {
   getSideSheet,
   getAutocomplete,
   getDatePicker,
-  getTimePicker
+  getTimePicker,
   getTextField,
   getIcon,
   getList,
@@ -62,7 +62,7 @@ export const getMUIComponents = (theme: Theme) => {
       ...getSideSheet(theme),
       ...getAutocomplete(theme),
       ...getDatePicker(theme),
-      ...getTimePicker(theme)
+      ...getTimePicker(theme),
       ...getTextField(theme),
       ...getIcon(theme),
       ...getTable(theme),
