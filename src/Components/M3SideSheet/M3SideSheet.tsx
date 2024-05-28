@@ -33,7 +33,7 @@ const M3SideSheet = ({
   width = 350,
 }: M3SideSheetProps) => {
   const [isSheetOpen, setSheetOpen] = useState(open);
-  
+
   useEffect(() => {
     setSheetOpen(open);
   }, [open]);
@@ -56,8 +56,12 @@ const M3SideSheet = ({
 
   // Convert children to an array
   const childrenArray = React.Children.toArray(children);
-  const actions = childrenArray.find((child: any) => child.type?.displayName === 'M3SideSheetActions');
-  const content = childrenArray.filter((child: any) => child.type?.displayName !== 'M3SideSheetActions');
+  const actions = childrenArray.find(
+    (child: any) => child.type?.displayName === "M3SideSheetActions"
+  );
+  const content = childrenArray.filter(
+    (child: any) => child.type?.displayName !== "M3SideSheetActions"
+  );
 
   return (
     <Drawer
@@ -79,24 +83,29 @@ const M3SideSheet = ({
             }}
           >
             <Typography
-              variant="h6"
+              variant="titleLarge"
               noWrap
               component="div"
               sx={{ flexGrow: 1 }}
             >
               {title}
             </Typography>
-            <IconButton onClick={(event) => handleClose(event, 'iconClick')}>
-              <Close/>
+            <IconButton onClick={(event) => handleClose(event, "iconClick")}>
+              <Close />
             </IconButton>
           </Toolbar>
         )}
-        <Box sx={{ flexGrow: 1, overflowY: "auto", padding: "24px", width: "100%" }}>
+        <Box
+          sx={{
+            flexGrow: 1,
+            overflowY: "auto",
+            padding: "24px",
+            width: "100%",
+          }}
+        >
           {content}
         </Box>
-        <Box sx={{ flexShrink: 0 }}>
-          {actions}
-        </Box>
+        <Box sx={{ flexShrink: 0 }}>{actions}</Box>
       </Box>
     </Drawer>
   );
