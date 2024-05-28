@@ -1,9 +1,9 @@
 import { DesktopDatePicker, DesktopDatePickerProps } from '@mui/x-date-pickers';
 import React from 'react';
 
-const M3DesktopDatePicker = (props: Omit<DesktopDatePickerProps<never, boolean>, 'children'> & { children: React.ReactNode }) => {
+const M3DesktopDatePicker = (props: DesktopDatePickerProps<never, boolean>) => {
   return (
-    <DesktopDatePicker {...props}>{props.children}</DesktopDatePicker>
+    <DesktopDatePicker {...props}/>
   );
 };
 

@@ -1,7 +1,7 @@
 import {MobileTimePicker, MobileTimePickerProps } from '@mui/x-date-pickers';
 import React from 'react';
 
-const M3MobileTimePicker = (props: Omit<MobileTimePickerProps<never>, 'children'> & { children: React.ReactNode }) => {
+const M3MobileTimePicker = (props:MobileTimePickerProps<never>) => {
   return (
     <MobileTimePicker {...props}/>
   );
