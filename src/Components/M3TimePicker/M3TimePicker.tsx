@@ -1,7 +1,7 @@
 import React from 'react';
 import { TimePicker, TimePickerProps } from '@mui/x-date-pickers';
 
-const M3TimePicker = (props: Omit<TimePickerProps<never, boolean>, 'children'> & { children?: React.ReactNode }) => {
+const M3TimePicker = (props: TimePickerProps<never, boolean>) => {
   return (
     <TimePicker {...props}/>
   );
