@@ -2,15 +2,15 @@ import React, { useState, useEffect, useRef } from "react";
 import { DatePicker, DatePickerProps } from "@mui/x-date-pickers";
 import { PickersCalendarHeaderProps } from "@mui/x-date-pickers/PickersCalendarHeader";
 import { styled } from "@mui/material/styles";
-import { IconButton, Stack, Typography, Button, Box } from "@mui/material";
+import { IconButton, Stack, Box } from "@mui/material";
+import dayjs from "dayjs";
+import { Theme } from "@mui/material";
+import { M3Button } from "../M3Button";
+import { M3Typography } from "../M3Typography";
 import ChevronLeft from "@mui/icons-material/ChevronLeft";
 import ChevronRight from "@mui/icons-material/ChevronRight";
 import ArrowDropDown from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUp from "@mui/icons-material/ArrowDropUp";
-import dayjs from "dayjs";
-import { Theme } from "@mui/material";
-import { M3Button } from "../Button";
-
 
 const CustomCalendarHeaderRoot = styled("div")({
   display: "flex",
@@ -159,9 +159,9 @@ function CustomCalendarHeader(props: PickersCalendarHeaderProps<dayjs.Dayjs>) {
           onClick={toggleMonthList}
           style={{ cursor: "pointer" }}
         >
-          <Typography textAlign="center" variant="body2">
+          <M3Typography textAlign="center" variant="bodyMedium">
             {currentMonth.format("MMM")}
-          </Typography>
+          </M3Typography>
           {showMonthList ? <ArrowDropUp /> : <ArrowDropDown />}
         </Stack>
         <IconButton
@@ -183,7 +183,7 @@ function CustomCalendarHeader(props: PickersCalendarHeaderProps<dayjs.Dayjs>) {
           onClick={toggleYearList}
           style={{ cursor: "pointer" }}
         >
-          <Typography variant="body1">{currentMonth.format("YYYY")}</Typography>
+          <M3Typography variant="bodySmall">{currentMonth.format("YYYY")}</M3Typography>
           {showYearList ? <ArrowDropUp /> : <ArrowDropDown />}
         </Stack>
         <IconButton onClick={selectNextYear} title="Next year">
@@ -250,6 +250,7 @@ const M3DatePicker = (
     <DatePicker
       {...props}
       showDaysOutsideCurrentMonth={true}
+      fixedWeekNumber={6}
       closeOnSelect={false}
       slotProps={{
         layout: {
