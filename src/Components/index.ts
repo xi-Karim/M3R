@@ -34,3 +34,5 @@ export * from "./M3DatePicker";
 export * from "./M3TextField";
 export * from "./M3Search";
 export * from "./M3Table";
+export * from "./M3Tabs";
+export * from "./M3Tab";

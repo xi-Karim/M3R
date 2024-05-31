@@ -30,6 +30,8 @@ import {
   getList,
   getTable,
 } from "../components";
+import { getTabs } from "../components/Tabs";
+import { getTab } from "../components/Tab";
 
 type M3Components = { components: Theme["components"] };
 
@@ -66,6 +68,8 @@ export const getMUIComponents = (theme: Theme) => {
       ...getTextField(theme),
       ...getIcon(theme),
       ...getTable(theme),
+      ...getTabs(theme),
+      ...getTab(theme),
     },
   } as M3Components;
 };
