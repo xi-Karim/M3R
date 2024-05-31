@@ -15,7 +15,7 @@ export const getDrawer = (theme: Theme): M3Drawer => {
             styleOverrides: {
                 paper: {
                     border: '0px',
-                    background: palette.surfaceContainer.main,
+                    background: palette.surfaceContainerLow.main,
                     color: palette.onSurfaceVariant.main
                 }
             }
