@@ -22,10 +22,12 @@ export default function M3ListItemButton(props: M3ListItemButtonProps) {
     headline,
     supportingText,
     overlineText,
+    selected = false,
+    onClick = () => {},
   } = props;
 
   return (
-    <ListItemButton>
+    <ListItemButton selected={selected} onClick={onClick}>
       {leading}
       <Stack>
         <Typography variant="labelSmall">
