@@ -1,48 +1,27 @@
 import React from "react";
-import { Divider, ListItemButton, ListItemButtonProps, Stack, Typography } from "@mui/material";
+import { ListItemButton, ListItemButtonProps } from "@mui/material";
 
-export interface M3ListItemButtonProps extends ListItemButtonProps {
-  children?: React.ReactNode;
-  leading?: React.ReactNode;
-  trailing?: React.ReactNode;
-  headline?: string
-  supportingText?: string;
-  overlineText?: string;
-  divider?: boolean;
-  dividerVariant?: "fullWidth" | "inset" | "middle" | undefined;
-}
+interface M3ListItemButtonModifiedProps {}
+
+export type M3ListItemButtonProps = M3ListItemButtonModifiedProps & ListItemButtonProps;
 
 export default function M3ListItemButton(props: M3ListItemButtonProps) {
   const {
     children,
-    divider = false,
-    dividerVariant = "fullWidth",
-    leading,
-    trailing,
-    headline,
-    supportingText,
-    overlineText,
-    selected = false,
-    onClick = () => {},
+    onClick,
+    ...rest
   } = props;
 
+  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    event.currentTarget.blur();
+    if (onClick) {
+      onClick(event);
+    }
+  };
+
   return (
-    <ListItemButton selected={selected} onClick={onClick}>
-      {leading}
-      <Stack>
-        <Typography variant="labelSmall">
-          {overlineText}
-        </Typography>
-        <Typography variant="bodyLarge">
-          {headline}
-        </Typography>
-        <Typography variant="bodyMedium">
-          {supportingText}
-        </Typography>
-      </Stack>
-      {trailing}
+    <ListItemButton {...rest} onClick={handleClick}>
       {children}
-      {divider && <Divider variant={dividerVariant} />}
     </ListItemButton>
-  )
+  );
 }
