@@ -80,14 +80,28 @@ const M3ListItem = ({
 
   const listItemContent = (
     <>
-      {icon && <ListItemIcon sx={{ m: 0, p: 0, width: '24px', height: '24px' }} >{icon}</ListItemIcon>}
+      {icon && <ListItemIcon sx={{
+        marginTop: '0px',
+        marginBottom: '0px',
+        marginLeft: '0px',
+        marginRight: '16px',
+        padding: 0,
+        width: '24px',
+        height: '24px',
+        display: 'flex',
+        justifyContent: 'flex-start',
+        alignContent: 'flex-start',
+        '& .MuiButtonBase-root': {
+          padding: '0px',
+        }
+      }} > {icon} </ListItemIcon>}
       {avatar && React.cloneElement(avatar, {
         sx: {
           minWidth: 'auto',
-          marginRight: '16px',
-          marginLeft: '0px',
           marginTop: '0px',
           marginBottom: '0px',
+          marginLeft: '0px',
+          marginRight: '16px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -100,7 +114,7 @@ const M3ListItem = ({
           root: supportingText ? HeadlineTypography : SupportingTypography
         },
         sx: {
-          m: 0,
+          margin: 0,
           marginRight: hasSecondaryAction ? 0 : '16px'
         }
       })}

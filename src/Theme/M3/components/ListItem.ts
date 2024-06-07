@@ -30,18 +30,12 @@ export const getListItem = (theme: Theme): M3ListItem => {
 
                     overflow: 'hidden',
 
-                    '& .MuiListItemText-root': {
-                        marginInlineStart: '16px',
-                    },
-
                     '& .MuiListItemIcon-root': {
-                        marginInlineStart: '16px',
                         minWidth: '24px',
                         color: palette.onSurfaceVariant.main,
                     },
 
                     '& .MuiAvatar-root': {
-                        marginInlineStart: '16px',
                         background: palette.primaryContainer.main,
                         color: palette.onPrimaryContainer.main,
                     },
