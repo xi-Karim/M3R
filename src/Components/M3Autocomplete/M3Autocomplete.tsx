@@ -6,7 +6,7 @@ interface M3AutocompleteModifiedProps {}
 
 // Merge the new props with AutocompleteProps
 export type M3AutocompleteProps = AutocompleteProps<
-  string,
+  string | object,
   boolean,
   boolean,
   boolean
